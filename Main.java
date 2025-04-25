@@ -1,3 +1,26 @@
+   view-search-student
+
+    static void viewStudents() {
+        if (students.isEmpty()) {
+        System.out.println("No students found.");
+        return;
+        }
+        System.out.println("\n--- List of Students ---");
+        for (Student s : students) {
+        System.out.println(s);
+        }
+        }
+        static void searchStudent() {
+        System.out.print("Enter Student ID to search: ");
+        int id = sc.nextInt();
+        for (Student s : students) {
+        if (s.getId() == id) {
+        System.out.println("Student Found: " + s);
+        return;
+        }
+        }
+        System.out.println("Student with ID " + id + " not found.");
+    }        
 import java.util.*; 
  
 public class Main { 
@@ -41,6 +64,7 @@ public class Main {
         } while (choice != 5); 
     }
 
+ delete-student
     static void deleteStudent() {
 System.out.print("Enter Student ID to delete: ");
 int id = sc.nextInt();
@@ -56,3 +80,17 @@ return;
 System.out.println("Student with ID " + id + " not found.");
 }
 }
+
+    static void addStudent() {
+        System.out.print("Enter Student ID: ");
+        int id = sc.nextInt();
+        sc.nextLine(); // Clear buffer
+        System.out.print("Enter Student Name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter Student Grade: ");
+        String grade = sc.nextLine();
+        students.add(new Student(id, name, grade));
+        System.out.println("Student added successfully.");
+        }
+ main
+ main
