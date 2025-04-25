@@ -40,3 +40,19 @@ public class Main {
  
         } while (choice != 5); 
     }
+
+    static void deleteStudent() {
+System.out.print("Enter Student ID to delete: ");
+int id = sc.nextInt();
+Iterator<Student> iterator = students.iterator();
+while (iterator.hasNext()) {
+Student s = iterator.next();
+if (s.getId() == id) {
+iterator.remove();
+System.out.println("Student with ID " + id + " deleted successfully.");
+return;
+}
+}
+System.out.println("Student with ID " + id + " not found.");
+}
+}
